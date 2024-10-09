@@ -48,3 +48,7 @@ cd java-app
 Nesse estudo, utilizamos a aplicação:
 
 * https://petlov.vercel.app/
+
+  Com as seguintes features:
+* skelleton de um projeto de automação básico;
+* cadastro;

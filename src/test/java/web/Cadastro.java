@@ -17,15 +17,12 @@ class Cadastro {
 	@DisplayName("Deve poder cadastrar um ponto de doação")
 	void createPoint() {
 		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://petlov.vercel.app/signup");
 
 		WebElement title = driver.findElement(By.cssSelector("h1"));
-
 		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 		wait.until(d -> title.isDisplayed());
-
 		assertEquals("Cadastro de ponto de doação", title.getText(), "Verificando o título da página ");
 
 		WebElement name = driver.findElement(By.cssSelector("input[placeholder='Nome do ponto de doação']"));
@@ -36,7 +33,6 @@ class Cadastro {
 
 		WebElement cep = driver.findElement(By.cssSelector("input[name=cep]"));
 		cep.sendKeys("04534011");
-
 		
 		WebElement cepButton = driver.findElement(By.cssSelector("input[value='Buscar CEP']"));
 		cepButton.click();
@@ -47,6 +43,28 @@ class Cadastro {
 		WebElement details = driver.findElement(By.cssSelector("input[name=addressDetails]"));
 		details.sendKeys("Prédio Azul");
 
+		driver.findElement(By.xpath("//span[text()=\"Cachorros\"]/..")).click();
+		driver.findElement(By.className("button-register")).click();
+
+		WebElement result = driver.findElement(By.cssSelector("#success-page p"));
+
+		Wait<WebDriver> waitResult = new WebDriverWait(driver, Duration.ofSeconds(2));
+		waitResult.until(d -> result.isDisplayed());
+
+		String target = "Seu ponto de doação foi adicionado com sucesso. Juntos, podemos criar um mundo onde todos os animais recebam o amor e cuidado que merecem.";
+		assertEquals(target, result.getText(), "Verificando a mensagem de sucesso.");
+
 		driver.close();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
