@@ -22,7 +22,7 @@ A estrutura do projeto segue o padrão maven, com a seguinte organização de di
 
 #### Pré-requisitos
 
-* **Java JDK 11+** : Certifique-se de que o JDK está instalado e configurado no PATH.
+* **Java JDK 21+** : Certifique-se de que o JDK está instalado e configurado no PATH.
 * **Maven** : Ferramenta de gerenciamento de dependências.
 * **Google Chrome** : Navegador utilizado para os testes.
 * **ChromeDriver** : Driver necessário para controlar o navegador Google Chrome.
