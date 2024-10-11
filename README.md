@@ -5,7 +5,7 @@ Projeto de treinamento de automação de testes Java Web. Esse projeto tem o obj
 ### Tecnologias
 
 - Linguagem de programação: Java
-- Framework de Testes: JUnit 5
+- Framework de Testes: JUnit 5 + Selenide
 - Automação de Navegador: Selenium  WebDriver 4
 - Gerenciamento de dependências: Maven
 - Navegador: Google Chrome
